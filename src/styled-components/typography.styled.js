@@ -18,19 +18,19 @@ const typography = {
     font: 300 10px/20px ${fontFamily};
   `,
   title: () => css`
-    font: 700 35px/30px ${fontFamily};
+    font: 700 35px/10px ${fontFamily};
   `,
   subTitle: () => css`
-    font: 400 20px/20px ${fontFamily};
+    font: 400 20px/10px ${fontFamily};
   `,
   desktopInputText: () => css`
-    font: 300 15px/19px ${fontFamily};
+    font: 300 15px/5px ${fontFamily};
   `,
   desktopButtonText: () => css`
-    font: 600 15px/19px ${fontFamily};
+    font: 600 15px/5px ${fontFamily};
   `,
   desktopSmallText: () => css`
-    font: 300 12px/20px ${fontFamily};
+    font: 300 12px/5px ${fontFamily};
   `
 };
 
@@ -97,7 +97,7 @@ const TitleText = styled.h1`
 `;
 
 const SubtitleText = styled.h3`
-  /* color: ${({ color }) => color || themeColors.darkBlue}; */
+  color: ${({ color }) => color || themeColors.darkBlue};
   text-align: ${({ textAlign }) => textAlign || "center"};
   ${() =>
     css`

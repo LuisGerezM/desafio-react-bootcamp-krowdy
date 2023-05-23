@@ -1,12 +1,11 @@
-import { QuestionRecorderContext } from "@/contexts/Recorder.context";
-import { InputTexts, TitleText } from "@/styled-components/typography.styled";
-import { useContext } from "react";
-import { Card, HomeHeader, Section } from "./styles";
-import CustomImage from "@/components/CustomImage";
-import { themeColors } from "@/styled-components/Theme.styled";
 import { CustomButton } from "@/components/CustomButton";
-import { routes } from "@/models/routes.models";
 import { LinkReactRouter } from "@/components/LinkReactRouter";
+import { QuestionRecorderContext } from "@/contexts/Recorder.context";
+import { routes } from "@/models/routes.models";
+import { TitleText } from "@/styled-components/typography.styled";
+import { useContext } from "react";
+import HomeCard from "./components/HomeCard";
+import { HomeHeader, Section } from "./styles";
 
 const Home = () => {
   const { questions, questionAreAnswered } = useContext(
@@ -30,32 +29,8 @@ const Home = () => {
       </HomeHeader>
       <Section className='home-section' disabled={!questionAreAnswered}>
         <div className='home-section-body'>
-          {questions.map(({ hasVideoRecord, question, id }) => (
-            <Card className='card' hasvideorecord={hasVideoRecord} key={id}>
-              <div className='card-body'>
-                {hasVideoRecord.status ? (
-                  <div>MOSTRAR pantalla negra del video</div>
-                ) : (
-                  <InputTexts
-                    className='card-body-message'
-                    color={themeColors.white}
-                  >
-                    Aun no respondiste esta pregunta
-                  </InputTexts>
-                )}
-                <CustomButton
-                  buttonClass='card-body-btn'
-                  disabled={!hasVideoRecord.status}
-                >
-                  <CustomImage
-                    src='/assets/icons/play-48.webp'
-                    alt='play icon'
-                    title='Play icon'
-                  />
-                </CustomButton>
-              </div>
-              <div className='card-footer'>{question}</div>
-            </Card>
+          {questions.map(question => (
+            <HomeCard key={"home-" + question.id} question={question} />
           ))}
         </div>
 

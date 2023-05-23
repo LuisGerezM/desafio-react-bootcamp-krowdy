@@ -6,7 +6,7 @@ import { fadeIn } from "@/styled-components/animation.styled";
 
 const CustomLink = styled(Link)`
   margin-top: 2rem;
-  padding: ${({ padding }) => padding || "6px 12px"};
+  padding: ${({ padding }) => padding || "1rem 2rem"};
   text-decoration: none;
   text-align: center;
   background-color: ${({ background }) =>
