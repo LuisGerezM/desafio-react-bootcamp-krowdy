@@ -1,19 +1,21 @@
-import { CustomButton } from "@/components/CustomButton";
-import { LinkReactRouter } from "@/components/LinkReactRouter";
+import { useContext } from "react";
 import { QuestionRecorderContext } from "@/contexts/Recorder.context";
 import { routes } from "@/models/routes.models";
-import { TitleText } from "@/styled-components/typography.styled";
-import { useContext } from "react";
+
 import HomeCard from "./components/HomeCard";
+import { LinkReactRouter } from "@/components/LinkReactRouter";
+import { CustomButton } from "@/components/CustomButton";
+
+import { TitleText } from "@/styled-components/typography.styled";
 import { HomeHeader, Section } from "./styles";
 
 const Home = () => {
-  const { questions, questionAreAnswered } = useContext(
+  const { questions, allQuestionsAnswered } = useContext(
     QuestionRecorderContext
   );
 
   const handleClickOnSend = () => {
-    console.log("ENVIAR");
+    window.alert("Se enviarán los videos con tus respuestas!!");
   };
 
   return (
@@ -27,7 +29,7 @@ const Home = () => {
           borderRadius='8px'
         />
       </HomeHeader>
-      <Section className='home-section' disabled={!questionAreAnswered}>
+      <Section className='home-section' disabled={!allQuestionsAnswered}>
         <div className='home-section-body'>
           {questions.map(question => (
             <HomeCard key={"home-" + question.id} question={question} />
@@ -38,7 +40,7 @@ const Home = () => {
           <CustomButton
             buttonClass='home-section-footer-btn'
             onClick={handleClickOnSend}
-            disabled={!questionAreAnswered}
+            disabled={!allQuestionsAnswered}
             text='Enviar'
           />
         </div>

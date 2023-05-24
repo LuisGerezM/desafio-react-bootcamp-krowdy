@@ -1,5 +1,6 @@
 import { css, keyframes, styled } from "styled-components";
 import { themeColors } from "@/styled-components/Theme.styled";
+import { fadeIn } from "@/styled-components/animation.styled";
 
 export const WrapCustomVideo = styled.div`
   width: ${props => props.widthcustomvideo || "100%"};
@@ -25,14 +26,16 @@ export const WrapCustomVideo = styled.div`
     width: 100%;
     height: 70%;
     border-radius: 8px;
+    box-shadow: 4px 4px 3px ${themeColors.blackShadow};
+    object-fit: contain;
   }
 
   .custom-video-recorder-wrap-btns {
     position: relative;
-    bottom: 4rem;
-    /* right: 9rem; */
+    bottom: 5rem;
     width: 20%;
-    padding-left: 5rem;
+    padding-left: 2rem;
+    ${fadeIn}
   }
 
   .custom-video-recorder-wrap-btns-btn {
@@ -50,6 +53,14 @@ export const WrapCustomVideo = styled.div`
     }
   }
 
+  .custom-video-preview-repeat {
+    width: 100%;
+    height: 92%;
+    border-radius: 8px;
+    box-shadow: 4px 4px 3px ${themeColors.blackShadow};
+    ${fadeIn}
+  }
+
   .custom-video-recorder-timer {
     z-index: 1000;
     position: relative;
@@ -59,6 +70,7 @@ export const WrapCustomVideo = styled.div`
     justify-content: flex-end;
     padding-right: 5rem;
     color: ${themeColors.white};
+    ${fadeIn}
   }
 `;
 

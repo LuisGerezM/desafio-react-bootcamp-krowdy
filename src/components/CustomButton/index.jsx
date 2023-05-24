@@ -1,4 +1,5 @@
 import { InputTexts } from "@/styled-components/typography.styled";
+import { Button } from "./styles";
 
 export const CustomButton = ({
   buttonClass = "",
@@ -8,8 +9,8 @@ export const CustomButton = ({
   children
 }) => {
   return (
-    <button className={buttonClass} onClick={onClick} disabled={disabled}>
+    <Button className={buttonClass} onClick={onClick} disabled={disabled}>
       {text ? <InputTexts>{text}</InputTexts> : children}
-    </button>
+    </Button>
   );
 };

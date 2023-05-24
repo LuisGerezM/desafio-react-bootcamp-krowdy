@@ -1,5 +1,6 @@
-import styled from "styled-components";
 import { Link } from "react-router-dom";
+
+import styled from "styled-components";
 import { themeColors } from "@/styled-components/Theme.styled";
 import { inputTextCssStyle } from "@/styled-components/typography.styled";
 import { fadeIn } from "@/styled-components/animation.styled";
@@ -15,6 +16,7 @@ const CustomLink = styled(Link)`
   border-radius: ${({ borderradius }) => borderradius || "none"};
   border: ${({ background }) =>
     `1px solid ${background || themeColors.skyBlue}`};
+  box-shadow: 4px 4px 3px ${themeColors.blackShadow};
 
   &:hover {
     background-color: ${({ background }) =>

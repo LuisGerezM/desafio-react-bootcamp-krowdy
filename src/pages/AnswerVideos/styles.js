@@ -8,4 +8,9 @@ export const WrapAnswerVideos = styled.div`
   .answerVideos-header {
     margin-bottom: 2rem;
   }
+
+  .answerVideos-header-linkRR {
+    z-index: 10;
+    position: relative;
+  }
 `;

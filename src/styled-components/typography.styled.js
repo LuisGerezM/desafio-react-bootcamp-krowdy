@@ -90,10 +90,6 @@ const TitleText = styled.h1`
     css`
       ${titleCssStyle}
     `};
-
-  /* &:hover {
-    color: ${themeColors.greenBlue};
-  } */
 `;
 
 const SubtitleText = styled.h3`
@@ -106,7 +102,6 @@ const SubtitleText = styled.h3`
 `;
 
 const InputTexts = styled.h5`
-  /* color: ${({ color }) => color || themeColors.darkBlue}; */
   text-align: ${({ textAlign }) => textAlign || "center"};
   ${() =>
     css`
@@ -115,7 +110,6 @@ const InputTexts = styled.h5`
 `;
 
 const SmallTexts = styled.h6`
-  /* color: ${({ color }) => color || themeColors.darkBlue}; */
   text-align: ${({ textAlign }) => textAlign || "center"};
   ${() =>
     css`

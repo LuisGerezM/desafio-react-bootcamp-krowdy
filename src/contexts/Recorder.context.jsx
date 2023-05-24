@@ -1,5 +1,4 @@
 import { ApiDataMocked } from "@/ApiDataMocked/ApiDataMocked";
-import { useEffect } from "react";
 import { createContext, useState } from "react";
 
 export const QuestionRecorderContext = createContext();
@@ -12,21 +11,36 @@ export const QuestionRecorderProvider = ({ children }) => {
     }))
   );
 
-  const [questionAreAnswered, setQuestionAreAnswered] = useState(false);
+  const [allQuestionsAnswered, setAllQuestionsAnswered] = useState(false);
 
-  useEffect(() => {
-    setQuestionAreAnswered(
-      !questions.some(question => question.hasVideoRecord.status === false)
+  const handleAllQuestionAnswered = value => setAllQuestionsAnswered(value);
+
+  const handleAddAnswerToQuestion = (id, videoUrl) => {
+    const videoRecordStatus = !!videoUrl || false;
+    const isVideoUrlExist = videoUrl || null;
+
+    const updateQuestions = questions.map(question =>
+      question.id === id
+        ? {
+            ...question,
+            hasVideoRecord: {
+              status: videoRecordStatus,
+              video: isVideoUrlExist
+            }
+          }
+        : { ...question }
     );
-  }, [questions]);
-
-  const handleAddAnswerToQuestion = () => {
-    console.log("handleAddReponseToQuestion");
+    setQuestions(updateQuestions);
   };
 
   return (
     <QuestionRecorderContext.Provider
-      value={{ handleAddAnswerToQuestion, questions, questionAreAnswered }}
+      value={{
+        handleAddAnswerToQuestion,
+        handleAllQuestionAnswered,
+        allQuestionsAnswered,
+        questions
+      }}
     >
       {children}
     </QuestionRecorderContext.Provider>

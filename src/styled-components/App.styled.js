@@ -1,25 +1,13 @@
-import styled, { css } from "styled-components";
-import { responsiveTemplate } from "./responsiveTemplate.styled";
+import { css } from "styled-components";
 import { themeColors } from "./Theme.styled";
+import { responsiveTemplate } from "./responsiveTemplate.styled";
 import { typography } from "./typography.styled";
 
-// const someOtherProperties = {
-//   globalRadius: "8px",
-//   globalShadowBoxCards: `0px 4px 4px ${themeColors.blackShadow}`
-// };
-
-// const Hr = styled.hr`
-//   height: 2px !important;
-//   color: ${themeColors.grayBorder};
-// `;
-
 const disabledCssStyle = css`
-  background-color: ${themeColors.gray};
-  color: ${themeColors.txtGray};
-  border: 2px solid ${themeColors.txtGray} !important;
-
+  background-color: ${themeColors.txtGray};
+  color: ${themeColors.darkBlue};
+  border: 2px solid ${themeColors.txtGray};
   ${typography.mobileTitle()}
-
   ${responsiveTemplate.desktop} {
     ${typography.title()}
   }
@@ -29,25 +17,16 @@ const disabledCssStyle = css`
   }
 
   &:hover {
-    background-color: ${themeColors.gray};
-    color: ${themeColors.txtGray};
-    filter: brightness(1.1) !important;
+    background-color: ${themeColors.txtGray};
+    color: ${themeColors.darkBlue};
+    cursor: none;
   }
 
   &:active {
-    background-color: ${themeColors.gray} !important;
-    color: ${themeColors.txtGray} !important;
-    filter: brightness(1.25);
+    background-color: ${themeColors.txtGray};
+    color: ${themeColors.darkBlue};
   }
 `;
-
-// const dropShadow = css`
-//   filter: drop-shadow(0px 5px 5px ${themeColors.blackShadow});
-// `;
-
-// const filterSaturate = css`
-//   filter: saturate(150%);
-// `;
 
 const scrollbarCssStyles = css`
   &::-webkit-scrollbar {
@@ -75,11 +54,4 @@ const scrollbarCssStyles = css`
   }
 `;
 
-export {
-  scrollbarCssStyles,
-  // filterSaturate,
-  // someOtherProperties,
-  // Hr,
-  disabledCssStyle
-  // dropShadow
-};
+export { scrollbarCssStyles, disabledCssStyle };

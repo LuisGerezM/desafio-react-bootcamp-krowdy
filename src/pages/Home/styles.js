@@ -1,10 +1,11 @@
+import { styled, css } from "styled-components";
 import { disabledCssStyle } from "@/styled-components/App.styled";
 import { themeColors } from "@/styled-components/Theme.styled";
 import { fadeIn } from "@/styled-components/animation.styled";
-import { styled, css } from "styled-components";
 
 export const HomeHeader = styled.header`
   .home-header-btn {
+    margin-top: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,7 +39,6 @@ export const Section = styled.section`
       border-radius: 8px;
       border: 1px solid ${themeColors.danger};
       transition: 0.5s;
-
       ${props =>
         props.disabled
           ? disabledCssStyle

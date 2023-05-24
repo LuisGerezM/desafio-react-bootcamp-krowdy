@@ -4,9 +4,8 @@ export const LinkReactRouter = ({
   linkClass = "",
   to,
   text,
-  color = "default",
-  border = undefined,
-  background = "default",
+  color = "",
+  background = "",
   icon = "",
   wrapLink = "",
   padding = "",
@@ -20,7 +19,6 @@ export const LinkReactRouter = ({
         background={background}
         padding={padding}
         to={to}
-        border={border}
         borderradius={borderRadius}
       >
         {icon} {text}

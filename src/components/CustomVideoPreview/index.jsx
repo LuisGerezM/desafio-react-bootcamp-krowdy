@@ -1,13 +1,14 @@
 import { SubtitleText } from "@/styled-components/typography.styled";
-import { styled } from "styled-components";
 
-const CustomVideoPreview = ({ recordedVideoURL }) => {
+const CustomVideoPreview = ({ recordedVideoURL, text }) => {
   return (
     <div>
-      <SubtitleText className='custom-video-preview-subtitle'>
-        Reproduciendo Video
-      </SubtitleText>
-      <VideoPreview
+      {text && (
+        <SubtitleText className='custom-video-preview-subtitle'>
+          Previsualizar Video
+        </SubtitleText>
+      )}
+      <video
         className='custom-video-preview-repeat'
         src={recordedVideoURL}
         controls
@@ -16,5 +17,3 @@ const CustomVideoPreview = ({ recordedVideoURL }) => {
   );
 };
 export default CustomVideoPreview;
-
-const VideoPreview = styled.video``;

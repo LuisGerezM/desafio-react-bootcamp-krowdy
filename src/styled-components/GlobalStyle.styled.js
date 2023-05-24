@@ -1,6 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 import { scrollbarCssStyles } from "./App.styled";
-import { inputTextCssStyle } from "./typography.styled";
 
 export const GlobalStyle = createGlobalStyle`
     html {
@@ -30,7 +29,7 @@ export const GlobalStyle = createGlobalStyle`
         }
 
         body {
-            background: -webkit-linear-gradient(to bottom, #F0E9DA, #e4e4e4, #ffffff);
+            background: linear-gradient(to bottom, #F0E9DA, #fefefefe);
             min-height: 100vh;
             max-width: 97%; 
             min-width: 300px;
@@ -49,7 +48,7 @@ export const GlobalStyle = createGlobalStyle`
 
         #root {
             width: 100%;
-            padding-top: 1.5rem;
+            margin-top: 4rem;
         }
     }
 `;

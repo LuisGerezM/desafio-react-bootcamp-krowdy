@@ -1,4 +1,5 @@
 import { themeColors } from "@/styled-components/Theme.styled";
+import { fadeIn } from "@/styled-components/animation.styled";
 import { styled } from "styled-components";
 
 export const BodyAnswerSection = styled.div`
@@ -7,7 +8,7 @@ export const BodyAnswerSection = styled.div`
   justify-content: center;
   align-items: center;
 
-  .answerSection-question {
+  .answer-section-question {
     background-color: ${themeColors.grayBorder};
     color: ${themeColors.darkBlue};
     width: 83%;
@@ -17,6 +18,7 @@ export const BodyAnswerSection = styled.div`
     align-items: center;
     margin: 0;
     border-radius: 8px;
+    ${fadeIn}
   }
 `;
 
@@ -27,8 +29,9 @@ export const FooterAnswerSection = styled.div`
   align-items: center;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+  ${fadeIn}
 
-  .answerSection-footer-btn {
+  .answer-section-footer-btn {
     color: ${themeColors.darkBlue};
     background-color: ${themeColors.white};
     border: 2px solid ${themeColors.darkBlue};
@@ -36,6 +39,7 @@ export const FooterAnswerSection = styled.div`
     margin-top: 2rem;
     border-radius: 8px;
     transition: background-color 0.5s;
+    box-shadow: 4px 4px 3px ${themeColors.blackShadow};
 
     &:hover {
       color: ${themeColors.white};

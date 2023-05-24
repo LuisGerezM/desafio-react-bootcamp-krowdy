@@ -1,13 +1,10 @@
-import { QuestionRecorderContext } from "@/contexts/Recorder.context";
-import { useContext } from "react";
-import { ArticleAnswerVideoCard } from "./styles";
 import CustomVideoRecorder from "@/components/CustomVideoRecorder";
+import { ArticleAnswerVideoCard } from "./styles";
 
-const AnswerVideoCard = ({ question }) => {
-  const { questionAreAnswered } = useContext(QuestionRecorderContext);
+const AnswerVideoCard = ({ id }) => {
   return (
     <ArticleAnswerVideoCard className='answerVideos-article'>
-      <CustomVideoRecorder id={question.id} widthCustomVideo='80%' />
+      <CustomVideoRecorder id={id} widthCustomVideo='80%' />
     </ArticleAnswerVideoCard>
   );
 };
