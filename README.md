@@ -29,6 +29,12 @@ Administración de video - WebRTC: [https://webrtc.github.io/samples/?authuser=1
 
 ---
 
+## <img src="https://img.icons8.com/stickers/100/book-1.png" alt="book-1" /> Para este desarrollo se usaron la librerias React Router DOM y Styled Components
+
+---
+
+---
+
 ## <img src="https://img.icons8.com/office/30/null/console.png"/> Cómo probarlo localmente
 
 - Puede clonar el proyecto en alguna carpeta o descargarlo en un archivo comprimido.
