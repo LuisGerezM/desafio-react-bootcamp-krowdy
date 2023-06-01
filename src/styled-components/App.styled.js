@@ -19,7 +19,7 @@ const disabledCssStyle = css`
   &:hover {
     background-color: ${themeColors.txtGray};
     color: ${themeColors.darkBlue};
-    cursor: none;
+    cursor: not-allowed;
   }
 
   &:active {

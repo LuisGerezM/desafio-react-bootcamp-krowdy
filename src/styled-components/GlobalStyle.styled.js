@@ -48,7 +48,7 @@ export const GlobalStyle = createGlobalStyle`
 
         #root {
             width: 100%;
-            margin-top: 4rem;
+            margin-top: 1.5rem;
         }
     }
 `;

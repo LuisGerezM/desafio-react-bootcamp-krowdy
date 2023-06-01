@@ -74,6 +74,10 @@ export const Card = styled.div`
             }
           `
         : disabledCssStyle}
+
+    .card-body-btn-img {
+      ${props => !props.hasvideorecord.status && disabledCssStyle};
+    }
   }
 
   .card-footer {

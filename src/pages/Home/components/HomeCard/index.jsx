@@ -26,6 +26,7 @@ const HomeCard = ({ question: { hasVideoRecord, question } }) => {
             disabled={!hasVideoRecord.status}
           >
             <CustomImage
+              imageClass='card-body-btn-img'
               src={srcIcons.PLAY_ICON}
               alt='play icon'
               title='Play icon'
